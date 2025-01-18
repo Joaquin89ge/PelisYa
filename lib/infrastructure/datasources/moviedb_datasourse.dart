@@ -6,7 +6,7 @@ import 'package:pelis_ya/config/domain/entities/movie.dart';
 import 'package:pelis_ya/infrastructure/mappers/movie_mapper.dart';
 import 'package:pelis_ya/infrastructure/models/moviedb/moviedb_response.dart';
 
-class MoviedbDatasourse extends MoviesDatasources {
+class MoviedbDatasource extends MoviesDatasources {
   final dio = Dio(BaseOptions(
       baseUrl: "https://api.themoviedb.org/3",
       queryParameters: {
