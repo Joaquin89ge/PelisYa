@@ -7,7 +7,9 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  animate_do: ^3.3.4
   build_runner: ^2.4.14
+  card_swiper: ^3.0.1
   dio: ^5.7.0
   flutter:
     sdk: flutter
