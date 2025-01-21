@@ -27,7 +27,7 @@ class MoviesSlideshow extends StatelessWidget {
           itemCount: movies.length,
           viewportFraction: 0.8,
           scale: 0.8,
-          autoplay: false,
+          autoplay: true,
           itemBuilder: (context, index) => _Slider(movie: movies[index]),
         ));
   }
@@ -40,11 +40,11 @@ class _Slider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     final decoration = BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        boxShadow: const [
-          BoxShadow(
-              color: Colors.black45, blurRadius: 10, offset: Offset(0, 10))
+        boxShadow: [
+          BoxShadow(color: colors.shadow, blurRadius: 10, offset: Offset(0, 10))
         ]);
     return Padding(
       padding: const EdgeInsets.only(bottom: 30, left: 10, right: 10),
@@ -53,8 +53,8 @@ class _Slider extends StatelessWidget {
           child: ClipRRect(
               borderRadius: BorderRadius.circular(25),
               child: Image.network(
-                movie.posterPath,
-                fit: BoxFit.fill,
+                movie.backdropPath,
+                fit: BoxFit.cover,
                 loadingBuilder: (context, child, loadingProgress) {
                   if (loadingProgress != null) {
                     return const DecoratedBox(
